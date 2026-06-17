@@ -29,14 +29,15 @@
       flex-direction: column;
     }
 
-    /* Center Content Container */
+    /* Center Content Container - Shifted Slightly Up */
     .hero {
       flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 0 20px;
+      /* The 12vh at the end pushes everything up from the bottom slightly */
+      padding: 0 20px 12vh 20px; 
     }
 
     /* Fluid Typography (Auto-scales between mobile and desktop) */
@@ -64,7 +65,7 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
-      margin-bottom: 30px;
+      margin-bottom: 35px;
       font-size: clamp(0.9rem, 2.5vw, 1.1rem);
       color: #cccccc;
       letter-spacing: 1px;
@@ -78,7 +79,7 @@
       flex-shrink: 0;
     }
 
-    /* Starlink-Style Button */
+    /* Starlink-Style Button with Animations */
     .download-btn {
       background-color: transparent;
       color: #ffffff;
@@ -89,8 +90,10 @@
       text-transform: uppercase;
       letter-spacing: 2px;
       text-decoration: none;
-      transition: all 0.3s ease;
+      /* Added a specialized transition for the click effect */
+      transition: transform 0.1s ease-out, background-color 0.2s ease, color 0.2s ease;
       cursor: pointer;
+      display: inline-block;
     }
 
     /* Button Hover Effect */
@@ -99,7 +102,14 @@
       color: #000000;
     }
 
-    /* Pinned Footer */
+    /* New: Button Click (Active) Animation */
+    .download-btn:active {
+      transform: scale(0.92); /* Shrinks the button slightly when pressed */
+      background-color: #cccccc; /* Dims slightly for visual feedback */
+      border-color: #cccccc;
+    }
+
+    /* Locked Bottom Footer */
     .footer {
       flex-shrink: 0; /* Prevents footer from squishing */
       padding: 20px;
@@ -114,7 +124,7 @@
 </head>
 <body>
 
-  <!-- Perfectly Centered Main Content -->
+  <!-- Main Content Box -->
   <div class="hero">
     <h1>Experience The App</h1>
     <p>Fast, reliable, and available anywhere. Install the official APK directly to your device.</p>

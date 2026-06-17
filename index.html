@@ -3,89 +3,208 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Download Our App</title>
+  
+  <!-- Updated Tab Name -->
+  <title>TEAM FAMILY #</title>
+  
+  <!-- Embedded "Black Thunder" Favicon (Works on Light and Dark Browser Tabs) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23ffffff'/%3E%3Cpath d='M55 20 L35 55 L50 55 L45 80 L65 45 L50 45 Z' fill='%23000000'/%3E%3C/svg%3E">
+
   <style>
-    /* Overall Page Styling - Dark, Modern, Space Vibe */
-    body {
+    /* Premium Global Reset & Fonts */
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      background-color: #000000; /* Deep space black */
+    }
+    
+    body {
+      background-color: #050505;
       color: #ffffff;
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
-      min-height: 100vh;
+      justify-content: space-between;
+      align-items: center;
+      overflow-x: hidden;
+    }
+
+    /* Decorative Background Glows */
+    body::before {
+      content: "";
+      position: absolute;
+      top: -10%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0) 70%);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Main Container Card (Responsive & Centered) */
+    .container {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 480px;
+      margin: auto padding;
+      padding: 40px 24px;
       text-align: center;
     }
 
-    /* Main Content Area */
-    .hero {
-      flex: 1;
+    /* App Icon Placeholder/Graphic */
+    .app-icon-wrapper {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(145deg, #111111, #222222);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 20px;
-      background: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%);
+      margin: 0 auto 30px auto;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }
 
-    /* Big, Bold Headings */
+    .app-icon-wrapper svg {
+      width: 40px;
+      height: 40px;
+      fill: #ffffff;
+    }
+
+    /* Typography */
     h1 {
-      font-size: 3.5rem;
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      margin-bottom: 15px;
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: -1px;
+      margin-bottom: 12px;
+      background: linear-gradient(180deg, #ffffff 0%, #a1a1a1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
-    /* Subtext */
-    p {
-      font-size: 1.2rem;
-      color: #a0a0a0;
-      max-width: 600px;
-      margin-bottom: 50px;
-      line-height: 1.6;
+    p.subtitle {
+      font-size: 1.05rem;
+      color: #888888;
+      line-height: 1.5;
+      margin-bottom: 40px;
     }
 
-    /* The Starlink-Style Button */
+    /* App Version Info Tag */
+    .release-info {
+      display: inline-block;
+      background-color: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #e0e0e0;
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      margin-bottom: 20px;
+    }
+
+    /* High-End Interactive Button */
     .download-btn {
-      background-color: transparent;
-      color: #ffffff;
-      border: 2px solid #ffffff;
-      padding: 15px 40px;
-      font-size: 1.1rem;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      cursor: pointer;
-    }
-
-    /* Button Hover Effect (Inverts colors) */
-    .download-btn:hover {
+      display: block;
+      width: 100%;
+      max-width: 280px;
+      margin: 0 auto 24px auto;
       background-color: #ffffff;
       color: #000000;
+      border: none;
+      padding: 16px 32px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.15);
     }
 
-    /* Custom Footer */
+    .download-btn:hover {
+      background-color: #f0f0f0;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(255, 255, 255, 0.25);
+    }
+
+    .download-btn:active {
+      transform: translateY(0);
+    }
+
+    /* Security Notice */
+    .notice {
+      font-size: 0.8rem;
+      color: #666666;
+      max-width: 320px;
+      margin: 0 auto;
+      line-height: 1.4;
+    }
+
+    /* Footer Branding */
     .footer {
-      padding: 25px;
-      font-size: 0.85rem;
-      color: #555555;
-      letter-spacing: 2px;
-      text-transform: uppercase;
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      padding: 30px 20px;
+      font-size: 0.75rem;
+      color: #444444;
+      letter-spacing: 3px;
+      font-weight: 600;
+    }
+
+    /* Responsive Adjustments for Tablets/Desktops */
+    @media (min-width: 768px) {
+      .container {
+        max-width: 540px;
+        padding: 60px 40px;
+        background: rgba(255, 255, 255, 0.01);
+        border: 1px solid rgba(255, 255, 255, 0.03);
+        border-radius: 24px;
+        box-shadow: 0 30px 100px rgba(0,0,0,0.8);
+        backdrop-filter: blur(20px);
+        margin-top: 8vh;
+        margin-bottom: 8vh;
+      }
+      h1 {
+        font-size: 2.8rem;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="hero">
-    <h1>Experience The App</h1>
-    <p>Fast, reliable, and available anywhere. Click below to install the official APK directly to your Android device.</p>
+  <!-- Main Content Card -->
+  <div class="container">
     
-    <a href="SmsSyncApp.apk" download class="download-btn">Download APK</a>
+    <!-- Minimalist App Graphic -->
+    <div class="app-icon-wrapper">
+      <svg viewBox="0 0 24 24">
+        <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/>
+      </svg>
+    </div>
+
+    <h1>Experience Freedom</h1>
+    <p class="subtitle">Fast, secure syncing across your environment. No configuration limits.</p>
+    
+    <!-- File Details Label -->
+    <div class="release-info">
+      📦 SmsSyncApp.apk (Latest Release)
+    </div>
+
+    <!-- Interactive Download CTA -->
+    <a href="SmsSyncApp.apk" download class="download-btn">Download for Android</a>
+
+    <!-- Security Information Help text -->
+    <p class="notice">
+      To install, you may need to allow installation from "Unknown Sources" in your mobile web browser security menu.
+    </p>
   </div>
 
+  <!-- Custom Branding Footer -->
   <div class="footer">
     POWERED BY TEAM FAMILY #
   </div>
